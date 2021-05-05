@@ -1,7 +1,7 @@
-import caesarcipher.*;
+import monoalphabeticcipher.MonoAlphabeticCipher;
 class Main {
     public static void main(String[] args) {
-        CaesarCipher caesarcipher = new CaesarCipher();
-        caesarcipher.encrypt();
+        MonoAlphabeticCipher m = new MonoAlphabeticCipher();
+        m.encrypt();
     }
 }
