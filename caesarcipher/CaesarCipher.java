@@ -10,10 +10,10 @@ public class CaesarCipher{
         int shift = input.nextInt();
         char[] ptar = plainText.toCharArray();
         for(int i=0;i<ptar.length;i++){
-            int t = ptar[i] - 96; // a=1 z=26 ascii 97 to 122
+            int t = ptar[i] - 'a'; // a=0 z=25 ascii 97 to 122
             t = (t+shift) % 26;
-            if (t<=0){t=t+26;}
-            ptar[i] = (char) (t+96);
+            if (t<0){t=t+26;}
+            ptar[i] = (char) (t+ 'a' );
             System.out.print(ptar[i]);
         }
         input.close();
@@ -23,10 +23,10 @@ public class CaesarCipher{
     public void decrypt(char[] ptar,int shift) {
         System.out.println("Decryption:");
         for(int i=0;i<ptar.length;i++){
-            int t = ptar[i] - 96; 
+            int t = ptar[i] - 'a'; 
             t = (t+shift*(-1)) % 26;
-            if (t<=0){t=t+26;}
-            ptar[i] = (char) (t+96);
+            if (t<0){t=t+26;}
+            ptar[i] = (char) (t+ 'a' );
             System.out.print(ptar[i]);
         }
         System.out.println("");
