@@ -9,11 +9,14 @@ public class VigenereCipher {
         System.out.println("Enter PlainText:");
         char[] pt = input.nextLine().toCharArray();
         char[] ct = new char[pt.length];
-        char[] key = new char[pt.length];
-        System.out.println("Key: ");
-        for(int i=0;i<pt.length;i++){
-            key[i] = (char) ('a' + i );
-            System.out.print(key[i]);
+        System.out.println("Enter Key: ");
+        char[] key = input.nextLine().toCharArray(); 
+        if(key.length != pt.length){
+            char[] newKey = new char[pt.length];
+            for(int i=0;i<pt.length;i++){
+                newKey[i] = key[((i) % key.length)];
+            }
+            key = newKey;
         }
         System.out.println(" ");
         createSquareTable();
